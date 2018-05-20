@@ -23,7 +23,64 @@ ul.contains-task-list { padding-left: 0; } ul ul.contains-task-list { padding-le
     <body>
         <h1 id="ultimate-css-grid-course--from-beginner-to-advanced">Ultimate CSS Grid Course: From Beginner to Advanced</h1>
 <p><a href="https://www.udemy.com/css-grid/learn/v4/content">Udemy Course from Peter Sommerhof</a></p>
+<h2 id="source-order-independence--order">Source-Order Independence: order</h2>
+<p>pick up at <a href="https://www.udemy.com/css-grid/learn/v4/t/lecture/7943450?start=0">Section 3 #14</a></p>
+<h2 id="defining-gutters-gaps--grid-row-gap-grid-column-gap">Defining Gutters (gaps): grid-row-gap &amp; grid-column-gap</h2>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.grid</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>
+    / <span class="hljs-number">200px</span> auto <span class="hljs-number">150px</span>;
+  <span class="hljs-attribute">grid-row-gap</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">grid-column-gap</span>: <span class="hljs-number">10px</span>
+}
+</div></code></pre>
+<h3 id="shorthand-version">Shorthand version</h3>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.grid</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span>
+    / <span class="hljs-number">200px</span> auto <span class="hljs-number">150px</span>;
+  <span class="hljs-comment">/* grid-row-gap: 10px; */</span>
+  <span class="hljs-comment">/* grid-column-gap: 10px */</span>
+  <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">10px</span>;
+}
+</div></code></pre>
+<h2 id="naming-grid-lines">Naming Grid Lines</h2>
+<p>Give <strong>EXPLICIT</strong> names to your grid lines.<br>
+Use square brackets to designate names in the code, i.e.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.grid</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template</span>: [row1-start] <span class="hljs-number">100px</span> [row1-end row2-start] <span class="hljs-number">100px</span> [row2-end]
+    /<span class="hljs-number">200px</span> auto <span class="hljs-number">150px</span>;
+}
+</div></code></pre>
+<h2 id="spanning-a-fixed-number-of-rows-or-columns">Spanning a Fixed Number of Rows or Columns</h2>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.grid</span> <span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:nth-child(1)</span> {
+  <span class="hljs-attribute">grid-row</span>: auto / span <span class="hljs-number">2</span>;
+}
+</div></code></pre>
+<h2 id="arranging-grid-items-with-start-and-end">Arranging grid items with start and end</h2>
+<h3 id="long-hand-version">Long Hand Version</h3>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.grid</span> <span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:nth-child(2)</span> {
+  <span class="hljs-attribute">grid-row-start</span>: <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">grid-row-end</span>: <span class="hljs-number">3</span>;
+  <span class="hljs-attribute">grid-column-start</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">grid-column-end</span>: <span class="hljs-number">2</span>;
+}
+</div></code></pre>
+<h3 id="short-hand-version">Short Hand Version</h3>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.grid</span> <span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:nth-child(5)</span> {
+  <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">1</span> / <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">1</span> / <span class="hljs-number">2</span>;
+}
+</div></code></pre>
 <h2 id="grid-template-rows-grid-template-columns">grid-template-rows &amp; grid-template-columns</h2>
+<p><code>grid-template</code> is shorthand to define first rows and then columns in your design.</p>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.grid</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template</span>: <span class="hljs-number">100px</span> <span class="hljs-number">100px</span> 
+  / <span class="hljs-number">200px</span> auto <span class="hljs-number">150px</span>;
+}
+</div></code></pre>
 <h2 id="display-grid">display:grid</h2>
 <pre class="hljs"><code><div><span class="hljs-selector-class">.grid</span> {
   <span class="hljs-attribute">display</span>: grid;
